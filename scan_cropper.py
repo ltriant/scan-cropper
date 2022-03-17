@@ -53,7 +53,7 @@ IMDIR = args.dir
 OUTDIR = args.odir
 SHOULD_APPEND_DATETIME = args.useDatetime
 
-if THREADS is 0 :
+if THREADS == 0 :
 	THREADS = multiprocessing.cpu_count()
 
 ERRORS = 0 # Total number of errors encountered.
@@ -91,7 +91,7 @@ def writeImage(dir, fileName, img):
 	return True
 
 def writeScans(dir, fileName, scans):
-	if len(scans) is 0:
+	if len(scans) == 0:
 		print("Warning: No scans were found in this image: "+fileName)
 		global ERRORS
 		ERRORS += 1
@@ -106,7 +106,7 @@ def writeScans(dir, fileName, scans):
 		num += 1
 
 def getAveROISize(candidates):
-	if len(candidates) is 0:
+	if len(candidates) == 0:
 		return 0
 	av = 0
 	for roi in candidates:
